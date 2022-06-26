@@ -1,0 +1,125 @@
+﻿@using BizLand.ViewModels
+@model HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<main>
+    <section id="BizLand">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <div class="bizland_text">
+                        <h1>Welcome to <span>BizLand</span></h1>
+                        <p>We are team of talented designers making websites with Bootstrap</p>
+                    </div>
+                    <div class="bizlend_item">
+                        <button type="button" class="btn btn-primary">Get Started</button>
+                        <div class="watch_video">
+                            <i class="fa-regular fa-circle-play"></i>
+                            <p>Watch Video</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<section id="About">
+    <div class="container">
+        <div class="about-caption">
+            <span>ABOUT</span>
+            <h3>Find Out More <b>About Us</b></h3>
+            <p>
+                Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
+                atque vitae autem.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <img src="https://bootstrapmade.com/demo/templates/BizLand/assets/img/about.jpg" alt="About-img">
+            </div>
+            <div class="col-xl-6">
+                <div class="about-items">
+                    <h4>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua.
+                    </p>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-store"></i>
+                            <div class="about-items-text">
+                                <h6>
+                                    Ullamco laboris nisi ut aliquip consequat
+                                </h6>
+                                <p>
+                                    Magni facilis facilis repellendus cum excepturi quaerat praesentium libre
+                                    trade
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-photo-film"></i>
+                            <div class="about-items-text">
+                                <h6>
+                                    Magnam soluta odio exercitationem reprehenderi
+                                </h6>
+                                <p>
+                                    Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna
+                                    pasata redi
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>
+                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                        est laborum
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="team">
+    <div class="container">
+        <div class="text-caption">
+            <span>TEAM</span>
+            <h3>Our Hardworking <b>Team</b></h3>
+            <p>
+                Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
+                atque
+                vitae autem.
+            </p>
+        </div>
+    </div>
+    <div class="row frame">
+        @foreach (TeamMember member in Model.TeamMembers)
+        {
+            <div class="col-xl-3 col-lg-3 col-md-6">
+
+                <div class="member">
+                    <img src="~/img/@member.URl"
+                         alt="member">
+                    <div class="member-info">
+                        <h5>@member.Name @member.SurName</h5>
+                        <p>@member.JobName</p>
+                    </div>
+                    <div class="social_medias">
+                        <ul>
+                            <li><a href="@member.TwitterURl"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="@member.FaceBookURl"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="@member.InstagramURl"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="@member.LinkedinURl"><i class="fa-brands fa-linkedin-in"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+</section>
